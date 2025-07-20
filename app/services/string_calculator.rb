@@ -1,6 +1,8 @@
 class StringCalculator
   def self.add(numbers)
     return 0 if numbers.strip.empty?
-    numbers.to_i
+
+    delimiter = /,|\n/
+    numbers.split(delimiter).map(&:to_i).sum
   end
 end
